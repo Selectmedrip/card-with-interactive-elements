@@ -1,73 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
+
+    <!-- Легенда шапки (Начало) -->
     <head>
+
+        <!-- Меты (Начало) -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Меты (Конец) -->
+
+        <!-- Заголовок (Начало) -->
         <title>Интерактивная карта</title>
+        <!-- Заголовок (Конец) -->
+
+        <!-- Линки (Начало) -->
         <link rel="icon" href="img/favicon-32x32.png" type="image/x-icon"/>
         <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon"/>
         <link href="css/style.css" rel="stylesheet" type="text/css">
-        <script defer src="js/script.js"></script>
-        <script defer src="js/cvc.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:500&display=swap">
+        <!-- Линки (Конец) -->
+
+        <!-- Скрипты (Начало) -->
+        <!--<script defer src="/card-with-interactive-elements/js/script.js"></script>-->
+        <script defer src="/card-with-interactive-elements/js/scripts.js"></script>
+        <!--<script defer src="/card-with-interactive-elements/js/cvc.js"></script>-->
+        <!-- Скрипты (Конец) -->
+
+
     </head>
+    <!-- Легенда шапки (Конец) -->
+
+
     <body>
         <main>
+            <!-- Большой контейнер (Начало) -->
             <div class="container">
+
+
+
+
+                <!-- Материальная карта (Начало) -->
                 <div class="cards-wrapper">
+
+                    <!-- Анимация лицевой карты и картинки (Начало) -->
                     <picture data-pg-ia='{"l":[{"name":"front-card","trg":"now","t":"this","a":"jackInTheBox"}]}'>
                         <img src="img/bg-card-front.png" class="front-card" id="front-card" alt="front-card" loading="lazy">
                         <img src="img/card-logo.svg" alt="card-logo" class="card-logo" data-pg-ia='{"l":[{"name":"card-logo","t":"this","a":"zoomInUp","trg":"load"}]}'>
-                        <span class="card-number" id="card-number">0000 0000 0000 0000</span>
+                        
+                        
+                        <span class="card-number" id="card-number">0000 0000 0000 0000</span>  <!-- Статичный номер карты -->
                         <div class="card-details" id="card-details">
-                            <span class="card-holder-name" id="card-holder-name">NAME SURNAME</span>
-                            <span class="card-date" id="card-date">00/00</span>
+                            <span class="card-holder-name" id="card-holder-name">NAME SURNAME</span> <!-- Статичное имя держателя карты -->
+                            <span class="card-date" id="card-date">00/00</span> <!-- Статичная дата срока действия карты -->
                         </div>
+
+
+
                     </picture>
+                    <!-- Анимация лицевой карты и картинки (Конец)  -->
+                   
+
+                    <!-- Анимация обратной стороны карты и картинки (Начало) -->
                     <picture data-pg-ia='{"l":[{"name":"back-card","trg":"now","t":"this","a":"slideInLeft"}]}'>
                         <img src="img/bg-card-back.png" class="back-card" id="back-card" alt="back-card" loading="lazy">
-                        <span class="card-cvc" id="card-cvc">000</span>
+
+
+                        <span class="card-cvc" id="card-cvc">000</span> <!-- Статичный код карты -->
                     </picture>
+                    <!-- Анимация обратной стороны карты (Конец) -->
+
                 </div>
+                <!-- Материальная карта (Конец) -->
+
+
+
+                <!-- Заполнение формы (Начало) -->
                 <form data-pg-ia='{"l":[{"name":"form","trg":"load","t":"this","a":"fadeInUp"}]}'>
+                    
+                    <!-- Форма ввода держателя карты (Начало) -->
                     <div class="form-card-name form-name">
-                        <label for="cardholdername">Cardholder name</label>
-                        <input name="cardholdername" type="text" id="cardholdername" placeholder="e.g. Name Surname" required maxlength="30">
-                        <span class="error-msg" id="name-error-msg">Wrong format, text only</span>
-                        <span class="warning-msg" id="name-warning-msg">Can't be blank</span>
+                        <label for="cardholdername">Имя держателя карты</label>
+                        <input name="cardholdername" type="text" id="cardholdername" placeholder="Пример: Иван Иванов " required maxlength="30">
+                        
+                        <!-- Сообщение об ошибках и предупреждениях (Начало) -->
+                        <span class="error-msg" id="name-error-msg">Неправилное имя или фамилия!</span>
+                        <span class="warning-msg" id="name-warning-msg">Имя держателя карты, не заполнено!</span>
+                        <!-- Сообщение об ошибках и предупреждених (Конец) -->
+
+
                     </div>
+                    <!-- Форма ввода держателя карты (Конец) -->
+
+
+
+                    <!-- Форма номера карты (Начало) -->
                     <div class="form-card-number">
-                        <label for="Cardnumber">Card number</label>
-                        <input name="Cardnumber" type="text" id="Cardnumber" required="true" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
-                        <span class="error-msg" id="number-error-msg">Wrong format, number only</span>
-                        <span class="warning-msg" id="number-warning-msg">Can't be blank</span>
+                        <label for="Cardnumber">Номер карты</label>
+                        <input name="Cardnumber" type="text" id="Cardnumber" required="true" placeholder="Пример: 1234 5678 9123 0000" maxlength="16">
+
+                        <!-- Сообщение об ошибках и предупреждениях (Начало) -->
+                        <span class="error-msg" id="number-error-msg">Введите действительный номер карты!</span>
+                        <span class="warning-msg" id="number-warning-msg">Номер карты не может быть пыстым!</span>
+                        <!-- Сообщение об ошибках и предупреждених (Конец) -->
+
                     </div>
+                    <!-- Форма номера карты (Конец) -->
+
+
+
+                    <!-- Общий бокс содержаший в себе дату и CVC-код карты (Начало) -->
                     <div class="form-card-extra-details">
+                       
+                       <!-- Форма даты (Начало) -->
                         <div class="form-card-date">
-                            <label for="Cardmonth">Exp. Date (MM/YY)</label>
+                            <label for="Cardmonth">Срок действия (ММ/ГГ)</label>
                             <div class="card-date-input">
-                                <input name="Cardmonth" type="text" id="Cardmonth" required="true" placeholder="MM" maxlength="2">
-                                <input name="Cardyear" type="text" id="Cardyear" required="true" placeholder="YY" maxlength="2">
+                                <input name="Cardmonth" type="text" id="Cardmonth" required="true" placeholder="ММ" maxlength="2">
+                                <input name="Cardyear" type="text" id="Cardyear" required="true" placeholder="ГГ" maxlength="2">
                             </div>
-                            <span class="error-msg" id="date-error-msg">Wrong format, number only</span><span class="warning-msg" id="date-warning-msg">Can't be blank</span>
+
+                            <!-- Сообщение об ошибках и предупреждениях (Начало) -->
+                            <span class="error-msg" id="date-error-msg">Неправильная дата!</span>
+                            <span class="warning-msg" id="date-warning-msg">Дата не может быть пустой!</span>
+                            <!-- Сообщение об ошибках и предупреждених (Конец) -->
+
                         </div>
+                        <!-- Форма даты (Конец) -->
+
+
+                        <!-- Форма CVC кода (Начало) -->
                         <div class="form-card-cvc">
-                            <label for="CVC">Card CVC</label>
+                            <label for="CVC">CVC–код</label>
                             <input name="CVC" type="text" id="CVC" required="true" placeholder="e.g. 123" maxlength="3">
-                            <span class="error-msg" id="cvc-error-msg">Wrong format, number only</span>
-                            <span class="warning-msg" id="cvc-warning-msg">Can't be blank</span>
+                            
+                            <!-- Сообщение об ошибках и предупреждениях (Начало) -->
+                            <span class="error-msg" id="cvc-error-msg">Введите действительный CVC код!   </span>
+                            <span class="warning-msg" id="cvc-warning-msg">CVC код не может быть пустым!</span>
+                            <!-- Сообщение об ошибках и предупреждених (Конец) -->
+
                         </div>
-                    </div>                     
-                    <button id="confirm" type="submit">Confirm</button>
+                        <!-- Форма CVC кода (Конец) -->
+
+                    </div>
+                    <!-- Общий бокс содержаший в себе дату и CVC-код карты (Конец) -->  
+                    
+                    
+
+
+                    <button id="confirm" type="submit">Подтвердить</button>
                 </form>
+                <!-- Заполнение формы (Конец) -->
+
+
+
+                <!-- Всплывающая форма после подтверждения (Начало) -->
                 <div class="confirmation">
                     <img src="img/icon-complete.svg">
-                    <h1>Thank you!</h1>
-                    <p>We&apos;ve added your card details</p>
-                    <button id="continue" type="submit">Continue</button>
+                    <h1>Спасибо вам!</h1>
+                    <p>Мы добавили данные вашей карты.</p>
+                    <button id="continue" type="submit">Продолжить</button>
                 </div>
+                <!-- Всплывающая форма после подтверждения (Конец) -->
+
+
+
+
             </div>
+            <!-- Большой контейнер (Конец) -->
+
+
         </main>
+
+
+        <!-- фрейм Анимации Pinegrow (Сосновый бор) -->
         <script src="pgia/lib/pgia.js"></script>
+        <!-- фрейм анимации Pinegrow (Сосновый бор)-->
+
+
     </body>
 </html>
